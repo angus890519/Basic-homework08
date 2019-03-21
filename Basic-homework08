@@ -1,0 +1,27 @@
+/* 計算機概論實務-基本練習作業-作業8*/
+/* 製作人：郭柏鋒 */
+/* 完成時間：2019/03/08 10:00*/  
+#include <stdio.h> //函示庫
+#include <stdlib.h> //函示庫
+int main() {
+    long inputnumber; //定義所輸入 
+    int i; //for迴圈使用的i 
+    printf("請輸入一個正整數:");
+    scanf("%ld", &inputnumber); //輸入一個數字 
+    if (inputnumber == 1) { //如果輸入的數字小於2的數非質數
+        printf("%ld：此數字不是質數\n",inputnumber);
+    } else {
+        if (inputnumber <= 3) { //如果輸入的數字為1.2.3皆是質數
+            printf("%ld：此數字是質數\n",inputnumber);
+        } else {
+            for (i=3; i <= inputnumber/2; i++) {  //做的次數 
+                if (inputnumber % i == 0) {  //假設能整除的話,就不是質數 
+                    printf("%ld：此數字不是質數\n", inputnumber);
+                    system("pause"); //暫停視窗 
+                    return 0;  //回傳值為0 
+                }
+            }
+            printf("%ld：此數字是質數\n", inputnumber);   
+        }
+    }
+}
